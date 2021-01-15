@@ -37,6 +37,8 @@ If Telsis is specified as the target language, the translator will attempt to tr
 
 The "display" option (`-d` or `--display`) can be used to show the results in the Telsis alphabet if the target language is Telsis. A font file must be specified for this to work. See the section on [Fonts](#fonts) for more information.
 
+Names that are not to be translated can be enclosed in double backslashes.
+
 
 ## Interactive console mode
 The interactive console mode allows the user to enter the source language, source text, and target language for translation. If a font file is specified, the translated Telsis language result (if the target language is Telsis) can also be displayed in the Telsis alphabet.
@@ -87,6 +89,27 @@ Nun annui noyirrikon
 ```
 ![](example_output.png)
 
+Names can be enclosed in double backslashes so that they appear correctly in translated text:
+```
+$ ./telsistrans.py -t "I love Major \\Gilbert\\" -sl en
+Nun posuk Gilbert ui gikapmarikon
+$ ./telsistrans.py -t "Posuk \\Gilbert\\ nunki." -sl telsis
+Thank you Major Gilbert.
+$ ./telsistrans.py -t "Thank you Major \\Gilbert\\" -sl en
+Posuk Gilbert nunki
+$ ./telsistrans.py -t "Nun posuk \\Gilbert\\ ui gikapmarikon." -sl telsis
+I like Major Gilbert.
+$ ./telsistrans.py -t "Thank you \\Gilbert\\, \\Hodgins\\, and \\Violet\\." -sl en
+Gilbert, Hodgins pukkap Violet nunki.
+```
+Note: Punctuation is sometimes not handled properly, so it is best to avoid using punctuation marks in the source text. For example:
+```
+$ ./telsistrans.py -t "\\Gilbert\\, \\Hodgins\\ pukkap \\Violet\\ nunki." -sl telsis
+Gilbert
+$ ./telsistrans.py -t "\\Gilbert\\ \\Hodgins\\ pukkap \\Violet\\ nunki." -sl telsis
+Thanks to Gilbert Hodgkins and Violet.
+```
+
 
 ## Use as library
 The translator has been implemented as a Python class, which allows the script to be used as a library. The basic method is to create an instance of the `telsis_translator` class, and call either the `lang2telsis` method to translate to the Telsis language, or the `telsis2lang` to translate from the Telsis language. The target text is found in `results['tgt_text']` of the class.
@@ -116,11 +139,10 @@ A font file for the Telsis alphabet is required to display the Telsis language r
 
 ## Versions
 Current version: v0.1
-- v0.1: Initial version with basic operations from command line, interactive console mode, and use as library.
+- v0.1: Initial version with basic operations from command line, interactive console mode, and use as library. Names can be handled by enclosing in double backslashes.
 TODO:
 - More robust testing using available text in Telsis language
 - Check that punctuation is handled correctly
-- Allow names to be handled "as if" (no translation) by enclosing names (or any text that is not to be translated) in backslashes
 - Single `translate` method that automatically determines how to handle the source text based on the parameters passed
 - GUI using Tk (if time allows)
 - Android app version using Kivy (ambitious goal)
