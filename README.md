@@ -140,6 +140,7 @@ A font file for the Telsis alphabet is required to display the Telsis language r
 ## Versions
 Current version: v0.1
 - v0.1: Initial version with basic operations from command line, interactive console mode, and use as library. Names can be handled by enclosing in double backslashes.
+
 TODO:
 - More robust testing using available text in Telsis language
 - Check that punctuation is handled correctly
