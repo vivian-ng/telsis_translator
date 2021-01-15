@@ -8,6 +8,7 @@ Note: Not for commercial use as this script uses the [google_trans_new](https://
 google_trans_new
 unidecode
 requests
+Pillow
 ```
 Install requirements with:
 ```

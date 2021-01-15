@@ -2,3 +2,4 @@
 google_trans_new
 unidecode
 requests
+Pillow
