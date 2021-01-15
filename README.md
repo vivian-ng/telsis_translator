@@ -126,3 +126,6 @@ Current version: v0.1
 
 ## License
 MIT License; see [LICENSE](LICENSE) file for more information.
+
+
+Copyright (c) 2021 Vivian Ng
