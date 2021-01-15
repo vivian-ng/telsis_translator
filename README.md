@@ -55,6 +55,8 @@ telsistrans.py -i -d -f fontfile.ttf
 ```
 where `fontfile.ttf` is the Truetype or OpenType font to use. For more information, see the section on [Fonts](#fonts).
 
+To exit the interactive console mode, enter `quit` for the source language.
+
 
 ## Examples
 Translate from Telsis language (target language defaults to English):
