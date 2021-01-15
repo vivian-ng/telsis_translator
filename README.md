@@ -1,5 +1,5 @@
 # Telsis language translator
-This Python3 script translates to and from the Telsis language, the language used in the world setting of Violet Evergarden. The language is created by translating the source text into Tamil, converting the Tamil script into unaccented English alphabet characters, using a substitution cipher to swap the characters, and finally representing the results in the Telsis alphabet. The [References](#references) section contains more information about decoding the language and the original script from which this translator is built on. This script can be used from the [commandline](#basic-usage), in [interactive console mode](#interactive-console-mode), or as a [Python library](#use-as-library).
+This Python3 script translates to and from the Telsis language, the language used in the world setting of Violet Evergarden. The language is created by translating the source text into Tamil, converting the Tamil script into unaccented English alphabet characters, using a substitution cipher to swap the characters, and finally representing the results in the Telsis alphabet. The [References](#references) section contains more information about decoding the language and the original script from which this translator is built on. This script can be used from the [commandline](#basic-usage), in [interactive console mode](#interactive-console-mode), or as a [Python library](#use-as-library). Detailed explanation of how to script works can be found [here](explanation.md).
 
 
 ## Requirements
@@ -143,7 +143,7 @@ Current version: v0.1
 
 TODO:
 - More robust testing using available text in Telsis language
-- Check that punctuation is handled correctly
+- Find a way to handle punctuation correctly
 - Single `translate` method that automatically determines how to handle the source text based on the parameters passed
 - GUI using Tk (if time allows)
 - Android app version using Kivy (ambitious goal)
