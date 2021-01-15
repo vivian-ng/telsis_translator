@@ -112,7 +112,7 @@ Thanks to Gilbert Hodgkins and Violet.
 
 
 ## Use as library
-The translator has been implemented as a Python class, which allows the script to be used as a library. The basic method is to create an instance of the `telsis_translator` class, and call either the `lang2telsis` method to translate to the Telsis language, or the `telsis2lang` to translate from the Telsis language. The target text is found in `results['tgt_text']` of the class.
+The translator has been implemented as a Python class, which allows the script to be used as a library. The basic method is to create an instance of the `telsis_translator` class, and call either the `lang2telsis` method to translate to the Telsis language, or `telsis2lang` to translate from the Telsis language. The target text is found in `results['tgt_text']` of the class.
 
 ```
 from telsistrans import telsis_translator
