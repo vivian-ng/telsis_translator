@@ -15,8 +15,8 @@ Note: When used as a library, it is up to the programmer to determine which meth
 - The Tamil source text is translated to the required target language.
 
 ## Translating to Telsis language
-- The source text is preprocessed to find all names. These are then replaced with labels XXX1, XXX2, and so on corresponding to each name. (Note: XXX is used because X is a character that is not substituted when converting between Tamil and Telsis.)
+- The source text is preprocessed to find all names. These are then replaced with labels `XXX1`, `XXX2`, and so on corresponding to each name. (Note: `XXX` is used because `X` is a character that is not substituted when converting between Tamil and Telsis.)
 - The processed source text is translated into Tamil.
 - The pronunciation of the Tamil text is converted to unaccented characters.
 - The Tamil text is then converted to Telsis by substituting using the alphabet table.
-- The labels XXX1, XXX2 and so on are replaced with their corresponding names to give the final target text.
+- The labels `XXX1`, `XXX2` and so on are replaced with their corresponding names to give the final target text.
