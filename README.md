@@ -149,7 +149,7 @@ TODO:
 - Single `translate` method that automatically determines how to handle the source text based on the parameters passed
 - GUI using Tk (if time allows)
 - Android app version using Kivy (ambitious goal)
-- Find a Google Translate Python library that allows commercial use (maybe the [pygoogletranslation](https://github.com/Saravananslb/py-googletranslation) library)
+- Find a Google Translate Python library that allows commercial use (maybe the [pygoogletranslation](https://github.com/Saravananslb/py-googletranslation) library or the [Googletrans](https://github.com/ssut/py-googletrans) library)
 
 
 ## References
