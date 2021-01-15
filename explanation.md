@@ -1,5 +1,19 @@
 # How does the Telsis language translator work?
 
+The Telsis language (called Nunkish by fans because the first word that was decoded was 'nunki' or 'thank you') is constructed by:
+
+1. Translating the source text from Japanese into English
+2. Translating the English text into an undisclosed language
+3. Using a substitution cipher to swap certain letters; names are not processed by the cipher
+
+This process was shared by Suzuki Takaaki at a [movie screening event](http://violet-evergarden.jp/special/greeting03/) that was held on December 3, 2020 at Shinjuku Piccadilly Cinema. The undisclosed language has been determined by fans as Tamil, as explained in this [Reddit post](https://www.reddit.com/r/anime/comments/88bbob/violet_evergarden_alphabet_and_language_part_2/). This means that we can create our own text in the Telsis language by:
+
+1. Translating the source text into Tamil
+2. Converting the Tamil script by denoting its pronunciation using unaccented characters
+3. Using a substitution cipher to swap certain letters; names are not processed by the cipher
+
+The above process can also be reversed to translate text in the Telsis language into the required real-world language.
+
 ## Determining source and target languages when used from the commandline
 The script determines whether it is translating from Telsis or to Telsis based on the commandline arguments.
 
