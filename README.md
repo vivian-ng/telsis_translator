@@ -117,6 +117,13 @@ A font file for the Telsis alphabet is required to display the Telsis language r
 ## Versions
 Current version: v0.1
 - v0.1: Initial version with basic operations from command line, interactive console mode, and use as library.
+TODO:
+- More robust testing using available text in Telsis language
+- Check that punctuation is handled correctly
+- Allow names to be handled "as if" (no translation) by enclosing names (or any text that is not to be translated) in backslashes
+- Single `translate` method that automatically determines how to handle the source text based on the parameters passed
+- GUI using Tk (if time allows)
+- Android app version using Kivy (ambitious goal)
 
 
 ## References
