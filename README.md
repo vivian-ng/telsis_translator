@@ -18,7 +18,7 @@ pip3 install -r requirements.txt
 
 ## Basic usage
 ```
-usage: telsistrans.py [-h] [-i | -t TEXT] [-sl SRCLANG] [-tl TGTLANG] [-d] [-f FONT]
+usage: telsistrans [-h] [-i | -t TEXT] [-sl SRCLANG] [-tl TGTLANG] [-d] [-f FONT]
 
 optional arguments:
   -h, --help            show this help message and exit
@@ -47,11 +47,11 @@ The interactive console mode allows the user to enter the source language, sourc
 
 To enter interactive console mode:
 ```
-telsistrans.py -i
+telsistrans -i
 ```
 To enter interactive console mode and display the results in the Telsis alphabet:
 ```
-telsistrans.py -i -d -f fontfile.ttf
+telsistrans -i -d -f fontfile.ttf
 ```
 where `fontfile.ttf` is the Truetype or OpenType font to use. For more information, see the section on [Fonts](#fonts).
 
@@ -61,56 +61,56 @@ To exit the interactive console mode, enter `quit` for the source language.
 ## Examples
 Translate from Telsis language (target language defaults to English):
 ```
-$ ./telsistrans.py -t nunki -sl telsis
+$ ./telsistrans -t nunki -sl telsis
 Thanks
 ```
 Translate to Telsis language:
 ```
-$ ./telsistrans.py -t thanks -tl telsis
+$ ./telsistrans -t thanks -tl telsis
 Nunki
 ```
 Translate to Japanese (source language assumed to be Telsis):
 ```
-$ ./telsistrans.py -t nunki -tl ja
+$ ./telsistrans -t nunki -tl ja
 ありがとう
 ```
 Translate from simplified Chinese (target language assumed to be Telsis):
 ```
-$ ./telsistrans.py -t 谢谢 -sl zh-cn
+$ ./telsistrans -t 谢谢 -sl zh-cn
 Nunki
 ```
 For longer text, enclose the source text in quotes:
 ```
-$ ./telsistrans.py -t "I love you" -tl telsis
+$ ./telsistrans -t "I love you" -tl telsis
 Nun annui noyirrikon
-$ ./telsistrans.py -t "nunki posuk" -tl en
+$ ./telsistrans -t "nunki posuk" -tl en
 Thank you Major
 ```
 Displaying in Telsis alphabet:
 ```
-$ ./telsistrans.py -t "I love you" -sl en -d -f Automemoryfont.otf 
+$ ./telsistrans -t "I love you" -sl en -d -f Automemoryfont.otf 
 Nun annui noyirrikon
 ```
 ![](example_output.png)
 
 Names can be enclosed in double backslashes so that they appear correctly in translated text:
 ```
-$ ./telsistrans.py -t "I love Major \\Gilbert\\" -sl en
+$ ./telsistrans -t "I love Major \\Gilbert\\" -sl en
 Nun posuk Gilbert ui gikapmarikon
-$ ./telsistrans.py -t "Posuk \\Gilbert\\ nunki." -sl telsis
+$ ./telsistrans -t "Posuk \\Gilbert\\ nunki." -sl telsis
 Thank you Major Gilbert.
-$ ./telsistrans.py -t "Thank you Major \\Gilbert\\" -sl en
+$ ./telsistrans -t "Thank you Major \\Gilbert\\" -sl en
 Posuk Gilbert nunki
-$ ./telsistrans.py -t "Nun posuk \\Gilbert\\ ui gikapmarikon." -sl telsis
+$ ./telsistrans -t "Nun posuk \\Gilbert\\ ui gikapmarikon." -sl telsis
 I like Major Gilbert.
-$ ./telsistrans.py -t "Thank you \\Gilbert\\, \\Hodgins\\, and \\Violet\\." -sl en
+$ ./telsistrans -t "Thank you \\Gilbert\\, \\Hodgins\\, and \\Violet\\." -sl en
 Gilbert, Hodgins pukkap Violet nunki.
 ```
 Note: Punctuation is sometimes not handled properly, so it is best to avoid using punctuation marks in the source text. For example:
 ```
-$ ./telsistrans.py -t "\\Gilbert\\, \\Hodgins\\ pukkap \\Violet\\ nunki." -sl telsis
+$ ./telsistrans -t "\\Gilbert\\, \\Hodgins\\ pukkap \\Violet\\ nunki." -sl telsis
 Gilbert
-$ ./telsistrans.py -t "\\Gilbert\\ \\Hodgins\\ pukkap \\Violet\\ nunki." -sl telsis
+$ ./telsistrans -t "\\Gilbert\\ \\Hodgins\\ pukkap \\Violet\\ nunki." -sl telsis
 Thanks to Gilbert Hodgkins and Violet.
 ```
 
@@ -140,6 +140,12 @@ Nun annui noyirrikon
 ## Fonts
 A font file for the Telsis alphabet is required to display the Telsis language results properly. This can be the [Violet_evergardenV14-Regular.ttf](https://goo.gl/PUiwDe) file from this [Reddit post](https://www.reddit.com/r/anime/comments/7t789w/violet_evergarden_how_to_be_an_optimal_dollfont/) or the [Automemoryfont.otf](https://drive.google.com/file/d/1a2FY8_Yyyk3ULGhpq7sPQ2N5KurLKyIk/view?usp=sharing) from this [Reddit post](https://www.reddit.com/r/VioletEvergarden/comments/fzkvc3/i_made_the_font_update/). The font file is specified by either the `-f` or `--font` option followed by the filename of the font file.
 
+The font can also be used directly with the `telsis_display` command. For example:
+
+```
+$ ./telsis_display "Nunki posuk"
+$ ./telsis_display "Nun annui noyirrikon" -f Automemoryfont.otf
+```
 
 ## Versions
 Current version: v0.1
