@@ -117,5 +117,6 @@ avail_trans_languages = {
 # This is the list of languages that the translation API can handle,
 # plus the Telsis language.
 avail_languages = {}
+avail_languages['undefined'] = ''
 avail_languages['telsis'] = 'telsis'
 avail_languages.update(avail_trans_languages)

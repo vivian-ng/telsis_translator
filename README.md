@@ -1,5 +1,5 @@
 # Telsis language translator
-This Python3 script translates to and from the Telsis language, the language used in the world setting of Violet Evergarden. The language is created by translating the source text into Tamil, converting the Tamil script into unaccented English alphabet characters, using a substitution cipher to swap the characters, and finally representing the results in the Telsis alphabet. The [References](#references) section contains more information about decoding the language and the original script from which this translator is built on. This script can be used from the [commandline](#basic-usage), in [interactive console mode](#interactive-console-mode), or as a [Python library](#use-as-library). Detailed explanation of how to script works can be found [here](explanation.md).
+This Python3 script translates to and from the Telsis language, the language used in the world setting of Violet Evergarden. The language is created by translating the source text into Tamil, converting the Tamil script into unaccented English alphabet characters, using a substitution cipher to swap the characters, and finally representing the results in the Telsis alphabet. The [References](#references) section contains more information about decoding the language and the original script from which this translator is built on. This script can be used from the [commandline](#basic-usage), in [interactive console mode](#interactive-console-mode), or as a [Python library](#use-as-library). A GUI is also available but it requires [Kivy](https://kivy.org/). Detailed explanation of how to script works can be found [here](explanation.md).
 
 Note: Not for commercial use as this script uses the [google_trans_new](https://github.com/lushan88a/google_trans_new) library which does not allow usage for commercial purposes.
 
@@ -10,18 +10,21 @@ unidecode
 requests
 Pillow
 ```
-Install requirements with:
+Install requirements (less Kivy) with:
 ```
 pip3 install -r requirements.txt
 ```
 
+[Kivy](https://kivy.org/) is needed to run the GUI. See the instructions [here](https://kivy.org/doc/stable/gettingstarted/installation.html) on how to install Kivy. The [Automemoryfont.otf](https://drive.google.com/file/d/1a2FY8_Yyyk3ULGhpq7sPQ2N5KurLKyIk/view?usp=sharing) from this [Reddit post](https://www.reddit.com/r/VioletEvergarden/comments/fzkvc3/i_made_the_font_update/) is also needed for the GUI and needs to be obtained separately and placed in the same directory as this app.
+
 
 ## Basic usage
 ```
-usage: telsistrans [-h] [-i | -t TEXT] [-sl SRCLANG] [-tl TGTLANG] [-d] [-f FONT]
+usage: telsistrans [-h] [-g | -i | -t TEXT] [-sl SRCLANG] [-tl TGTLANG] [-d] [-f FONT]
 
 optional arguments:
   -h, --help            show this help message and exit
+  -g, --gui             graphical mode
   -i, --interactive     interactive console mode
   -t TEXT, --text TEXT  source text
   -sl SRCLANG, --srclang SRCLANG
@@ -41,6 +44,7 @@ The "display" option (`-d` or `--display`) can be used to show the results in th
 
 Names that are not to be translated can be enclosed in double backslashes.
 
+The "gui" option will launch a GUI if [Kivy](https://kivy.org/) is installed.
 
 ## Interactive console mode
 The interactive console mode allows the user to enter the source language, source text, and target language for translation. If a font file is specified, the translated Telsis language result (if the target language is Telsis) can also be displayed in the Telsis alphabet.
@@ -147,16 +151,17 @@ $ ./telsis_display "Nunki posuk"
 $ ./telsis_display "Nun annui noyirrikon" -f Automemoryfont.otf
 ```
 
+For the desktop GUI, the font file needs to be in your system. In Linux systems, you can place the file in `~/.fonts` folder. In Windows, you will need to install the font. Currently, the desktop GUI uses the Automemoryfont.otf fontfile from this [Reddit post](https://www.reddit.com/r/VioletEvergarden/comments/fzkvc3/i_made_the_font_update/). 
+
 ## Versions
-Current version: v0.1
+Current version: v0.2
 - v0.1: Initial version with basic operations from command line, interactive console mode, and use as library. Names can be handled by enclosing in double backslashes.
+- v0.2: Added simple GUI using PySimpleGUI. The [Automemoryfont.otf](https://drive.google.com/file/d/1a2FY8_Yyyk3ULGhpq7sPQ2N5KurLKyIk/view?usp=sharing) from this [Reddit post](https://www.reddit.com/r/VioletEvergarden/comments/fzkvc3/i_made_the_font_update/) is used for the time being, and the file has to be obtained separately by the user.
 
 TODO:
 - More robust testing using available text in Telsis language
 - Find a way to handle punctuation correctly
 - Single `translate` method that automatically determines how to handle the source text based on the parameters passed
-- GUI using Tk (if time allows)
-- Android app version using Kivy (ambitious goal)
 - Find a Google Translate Python library that allows commercial use (maybe the [pygoogletranslation](https://github.com/Saravananslb/py-googletranslation) library or the [Googletrans](https://github.com/ssut/py-googletrans) library)
 
 
