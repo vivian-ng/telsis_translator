@@ -14,6 +14,9 @@ from languages import *
 
 USER_FONT_SIZE = 24
 UI_FONT_SIZE = 20
+DEFAULT_FONT = "Courier"
+TELSIS_FONT = "Automemoryfont"
+
 def find_key(x, d):
     # Helper function: find key in dictionary d with value of x
     for key, value in d.items():
@@ -96,7 +99,7 @@ def run_app(translator):
     target_text_label = sg.Text("Target text:")
     target_text_input = sg.Multiline("", size=(45,5), key="target_text")
 
-    telsis_text_input = sg.Multiline("", size=(45,5), font=("Automemoryfont", UI_FONT_SIZE),
+    telsis_text_input = sg.Multiline("", size=(45,5), font=(TELSIS_FONT, UI_FONT_SIZE),
                             key="telsis_text")
     error_text_label = sg.Multiline("", size=(45,1), key="error_text")
 
@@ -109,7 +112,7 @@ def run_app(translator):
             [target_text_input],
             [telsis_text_input],
             [error_text_label]]
-    window = sg.Window('Telsis Translator', layout, font=("Courier", UI_FONT_SIZE))
+    window = sg.Window('Telsis Translator', layout, font=(DEFAULT_FONT, UI_FONT_SIZE))
 
     while True:  # Event Loop
         event, values = window.read()
