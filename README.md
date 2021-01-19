@@ -1,5 +1,5 @@
 # Telsis language translator
-This Python3 script translates to and from the Telsis language, the language used in the world setting of Violet Evergarden. The language is created by translating the source text into Tamil, converting the Tamil script into unaccented English alphabet characters, using a substitution cipher to swap the characters, and finally representing the results in the Telsis alphabet. The [References](#references) section contains more information about decoding the language and the original script from which this translator is built on. This script can be used from the [commandline](#basic-usage), in [interactive console mode](#interactive-console-mode), or as a [Python library](#use-as-library). A GUI is also available but it requires [Kivy](https://kivy.org/). Detailed explanation of how to script works can be found [here](explanation.md).
+This Python3 script translates to and from the Telsis language, the language used in the world setting of Violet Evergarden. The language is created by translating the source text into Tamil, converting the Tamil script into unaccented English alphabet characters, using a substitution cipher to swap the characters, and finally representing the results in the Telsis alphabet. The [References](#references) section contains more information about decoding the language and the original script from which this translator is built on. This script can be used from the [commandline](#basic-usage), in [interactive console mode](#interactive-console-mode), or as a [Python library](#use-as-library). A GUI is also available but it requires PySimpleGUI. A future GUI will use [Kivy](https://kivy.org/). Detailed explanation of how to script works can be found [here](explanation.md).
 
 Note: Not for commercial use as this script uses the [google_trans_new](https://github.com/lushan88a/google_trans_new) library which does not allow usage for commercial purposes.
 
@@ -10,12 +10,18 @@ unidecode
 requests
 Pillow
 ```
-Install requirements (less Kivy) with:
+Install requirements (less PySimpleGUI or Kivy) with:
 ```
 pip3 install -r requirements.txt
 ```
 
-[Kivy](https://kivy.org/) is needed to run the GUI. See the instructions [here](https://kivy.org/doc/stable/gettingstarted/installation.html) on how to install Kivy. The [Automemoryfont.otf](https://drive.google.com/file/d/1a2FY8_Yyyk3ULGhpq7sPQ2N5KurLKyIk/view?usp=sharing) from this [Reddit post](https://www.reddit.com/r/VioletEvergarden/comments/fzkvc3/i_made_the_font_update/) is also needed for the GUI and needs to be obtained separately and placed in the same directory as this app.
+To install PySimpleGUI, which is needed for the GUI:
+```
+pip3 install pysimplegui
+```
+The [Automemoryfont.otf](https://drive.google.com/file/d/1a2FY8_Yyyk3ULGhpq7sPQ2N5KurLKyIk/view?usp=sharing) from this [Reddit post](https://www.reddit.com/r/VioletEvergarden/comments/fzkvc3/i_made_the_font_update/) is also needed for the GUI and needs to be obtained separately and placed in the same directory as this app.
+
+A future version will need [Kivy](https://kivy.org/) to run the GUI. See the instructions [here](https://kivy.org/doc/stable/gettingstarted/installation.html) on how to install Kivy. 
 
 
 ## Basic usage
@@ -44,7 +50,7 @@ The "display" option (`-d` or `--display`) can be used to show the results in th
 
 Names that are not to be translated can be enclosed in double backslashes.
 
-The "gui" option will launch a GUI if [Kivy](https://kivy.org/) is installed.
+The "gui" option will launch a GUI if PySimpleGUI (or in the future, [Kivy](https://kivy.org/)) is installed.
 
 ## Interactive console mode
 The interactive console mode allows the user to enter the source language, source text, and target language for translation. If a font file is specified, the translated Telsis language result (if the target language is Telsis) can also be displayed in the Telsis alphabet.
