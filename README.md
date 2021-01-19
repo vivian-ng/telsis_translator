@@ -52,6 +52,8 @@ Names that are not to be translated can be enclosed in double backslashes.
 
 The "gui" option will launch a GUI if PySimpleGUI (or in the future, [Kivy](https://kivy.org/)) is installed.
 
+![](pysimplegui_screenshot.png)
+
 ## Interactive console mode
 The interactive console mode allows the user to enter the source language, source text, and target language for translation. If a font file is specified, the translated Telsis language result (if the target language is Telsis) can also be displayed in the Telsis alphabet.
 
