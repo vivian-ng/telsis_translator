@@ -5,7 +5,7 @@ from telsis_alphabet import alphabet
 import requests
 import argparse, sys
 
-__version__ = "0.1"
+__version__ = "0.2"
 
 from PIL import Image, ImageDraw, ImageFont
 
@@ -164,6 +164,8 @@ def interactive_console(display_flag, font_file):
 def main():
     parser = argparse.ArgumentParser()
     group = parser.add_mutually_exclusive_group()
+    group.add_argument("-g", "--gui", help="graphical mode",
+                    action="store_true")
     group.add_argument("-i", "--interactive", help="interactive console mode",
                     action="store_true")
     group.add_argument("-t", "--text", type=str, 
@@ -202,7 +204,11 @@ def main():
             sys.exit(1)
 
     # Handle arguments
-    if args.interactive:  # Interactive mode
+    if args.gui:
+        from gui import run_gui
+        translator = telsis_translator()
+        run_gui(translator)
+    elif args.interactive:  # Interactive mode
         if args.display:  # Display results in Telsis font
             interactive_console(True, args.font)
         else:  # Do not display results in Telsis font
