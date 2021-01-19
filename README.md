@@ -169,8 +169,9 @@ Current version: v0.2
 TODO:
 - More robust testing using available text in Telsis language
 - Find a way to handle punctuation correctly
-- Single `translate` method that automatically determines how to handle the source text based on the parameters passed
+- Create a Kivy GUI with a nice looking theme
 - Find a Google Translate Python library that allows commercial use (maybe the [pygoogletranslation](https://github.com/Saravananslb/py-googletranslation) library or the [Googletrans](https://github.com/ssut/py-googletrans) library)
+- Ambitious goal: train a deep learning neural network to recognize Telsis language alphabets and convert them into English alphabets, then run translation on the result
 
 
 ## References
