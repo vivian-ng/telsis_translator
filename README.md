@@ -150,7 +150,7 @@ Nun annui noyirrikon
 
 
 ## Fonts
-A font file for the Telsis alphabet is required to display the Telsis language results properly. This can be the [Violet_evergardenV14-Regular.ttf](https://goo.gl/PUiwDe) file from this [Reddit post](https://www.reddit.com/r/anime/comments/7t789w/violet_evergarden_how_to_be_an_optimal_dollfont/) or the [Automemoryfont.otf](https://drive.google.com/file/d/1a2FY8_Yyyk3ULGhpq7sPQ2N5KurLKyIk/view?usp=sharing) from this [Reddit post](https://www.reddit.com/r/VioletEvergarden/comments/fzkvc3/i_made_the_font_update/). The font file is specified by either the `-f` or `--font` option followed by the filename of the font file.
+A font file for the Telsis alphabet is required to display the Telsis language results properly. This can be the [Violet_evergardenV14-Regular.ttf](https://goo.gl/PUiwDe) file from this [Reddit post](https://www.reddit.com/r/anime/comments/7t789w/violet_evergarden_how_to_be_an_optimal_dollfont/) or the [Automemoryfont.otf](https://drive.google.com/file/d/1a2FY8_Yyyk3ULGhpq7sPQ2N5KurLKyIk/view?usp=sharing) from this [Reddit post](https://www.reddit.com/r/VioletEvergarden/comments/fzkvc3/i_made_the_font_update/). The font file is specified by either the `-f` or `--font` option followed by the filename of the font file. Due to the lack of distribution rights, font files are not included in this repository and must be obtained separately from the respective links.
 
 The font can also be used directly with the `telsis_display` command. For example:
 
@@ -175,7 +175,7 @@ TODO:
 
 
 ## References
-- Original [Python script](https://repl.it/@ValkrenDarklock/NunkishTrans) by Valkren; this script has been heavily modified to allow bidirectional translation as well as display in the Telsis alphabet.
+- Original [Python script](https://repl.it/@ValkrenDarklock/NunkishTrans) by Valkren, which translates Telsis into English
 - [Reddit post](https://www.reddit.com/r/anime/comments/88bbob/violet_evergarden_alphabet_and_language_part_2/) on decoding the Telsis language
 
 
