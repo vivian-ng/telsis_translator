@@ -11,10 +11,12 @@ from PIL import Image, ImageDraw, ImageFont
 
 def telsis2image(telsis_text, font_file):
     # Displays in Telsis characters.
-    # Requires font file "Violet_evergardenV14-Regular.ttf"
+    # Requires a font file.
+    # TelsisTyped.otf is included with the repository.
+    # Alternatives are "Violet_evergardenV14-Regular.ttf"
     # from https://www.reddit.com/r/anime/comments/7t789w/violet_evergarden_how_to_be_an_optimal_dollfont/
     # with the link at https://goo.gl/PUiwDe
-    # Alternative font from https://www.reddit.com/r/VioletEvergarden/comments/fzkvc3/i_made_the_font_update/
+    # and the font from https://www.reddit.com/r/VioletEvergarden/comments/fzkvc3/i_made_the_font_update/
     # with the link at https://drive.google.com/file/d/1a2FY8_Yyyk3ULGhpq7sPQ2N5KurLKyIk/view?usp=sharing
     # create an image
     out = Image.new("RGB", (720, 100), (255, 255, 255))
@@ -25,7 +27,7 @@ def telsis2image(telsis_text, font_file):
     # get a drawing context
     d = ImageDraw.Draw(out)
     d.rectangle([0,0,720,100], fill=(255,255,255))
-    d.text((10,10), telsis_text, fill=(0,0,0), font=fnt, stroke_width=1)
+    d.text((10,10), telsis_text, fill=(0,0,0), font=fnt, stroke_width=0)
     out.show()
 
 #translator = google_translator()

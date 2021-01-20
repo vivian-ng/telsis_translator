@@ -19,7 +19,7 @@ To install PySimpleGUI, which is needed for the GUI:
 ```
 pip3 install pysimplegui
 ```
-The [Automemoryfont.otf](https://drive.google.com/file/d/1a2FY8_Yyyk3ULGhpq7sPQ2N5KurLKyIk/view?usp=sharing) from this [Reddit post](https://www.reddit.com/r/VioletEvergarden/comments/fzkvc3/i_made_the_font_update/) is also needed for the GUI and needs to be obtained separately and placed in the same directory as this app.
+The font file [TelsisTyped.otf](TelsisTyped.otf) is required for the GUI and needs to be installed in the system font path. This can be `~/.fonts` for Linux systems. For Windows, it will need to be installed.
 
 A future version will need [Kivy](https://kivy.org/) to run the GUI. See the instructions [here](https://kivy.org/doc/stable/gettingstarted/installation.html) on how to install Kivy. 
 
@@ -150,21 +150,21 @@ Nun annui noyirrikon
 
 
 ## Fonts
-A font file for the Telsis alphabet is required to display the Telsis language results properly. This can be the [Violet_evergardenV14-Regular.ttf](https://goo.gl/PUiwDe) file from this [Reddit post](https://www.reddit.com/r/anime/comments/7t789w/violet_evergarden_how_to_be_an_optimal_dollfont/) or the [Automemoryfont.otf](https://drive.google.com/file/d/1a2FY8_Yyyk3ULGhpq7sPQ2N5KurLKyIk/view?usp=sharing) from this [Reddit post](https://www.reddit.com/r/VioletEvergarden/comments/fzkvc3/i_made_the_font_update/). The font file is specified by either the `-f` or `--font` option followed by the filename of the font file. Due to the lack of distribution rights, font files are not included in this repository and must be obtained separately from the respective links.
+A font file for the Telsis alphabet is required to display the Telsis language results properly. A simple font file [TelsisTyped.otf](TelsisTyped.otf) has been included in this repository. Alternatives include the [Violet_evergardenV14-Regular.ttf](https://goo.gl/PUiwDe) file from this [Reddit post](https://www.reddit.com/r/anime/comments/7t789w/violet_evergarden_how_to_be_an_optimal_dollfont/) or the [Automemoryfont.otf](https://drive.google.com/file/d/1a2FY8_Yyyk3ULGhpq7sPQ2N5KurLKyIk/view?usp=sharing) from this [Reddit post](https://www.reddit.com/r/VioletEvergarden/comments/fzkvc3/i_made_the_font_update/). The font file is specified by either the `-f` or `--font` option followed by the filename of the font file.
 
 The font can also be used directly with the `telsis_display` command. For example:
 
 ```
 $ ./telsis_display "Nunki posuk"
-$ ./telsis_display "Nun annui noyirrikon" -f Automemoryfont.otf
+$ ./telsis_display "Nun annui noyirrikon" -f TelsisTyped.otf
 ```
 
-For the desktop GUI, the font file needs to be in your system. In Linux systems, you can place the file in `~/.fonts` folder. In Windows, you will need to install the font. Currently, the desktop GUI uses the Automemoryfont.otf fontfile from this [Reddit post](https://www.reddit.com/r/VioletEvergarden/comments/fzkvc3/i_made_the_font_update/). 
+For the desktop GUI, the font file needs to be in your system. In Linux systems, you can place the file in `~/.fonts` folder. In Windows, you will need to install the font. Currently, the desktop GUI uses [TelsisTyped.otf](TelsisTyped.otf) included in this repository. 
 
 ## Versions
 Current version: v0.2
 - v0.1: Initial version with basic operations from command line, interactive console mode, and use as library. Names can be handled by enclosing in double backslashes.
-- v0.2: Added simple GUI using PySimpleGUI. The [Automemoryfont.otf](https://drive.google.com/file/d/1a2FY8_Yyyk3ULGhpq7sPQ2N5KurLKyIk/view?usp=sharing) from this [Reddit post](https://www.reddit.com/r/VioletEvergarden/comments/fzkvc3/i_made_the_font_update/) is used for the time being, and the file has to be obtained separately by the user.
+- v0.2: Added simple GUI using PySimpleGUI.
 
 TODO:
 - More robust testing using available text in Telsis language

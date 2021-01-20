@@ -15,7 +15,7 @@ from languages import *
 USER_FONT_SIZE = 24
 UI_FONT_SIZE = 20
 DEFAULT_FONT = "Courier"
-TELSIS_FONT = "Automemoryfont"
+TELSIS_FONT = "TelsisTyped"
 
 def find_key(x, d):
     # Helper function: find key in dictionary d with value of x
