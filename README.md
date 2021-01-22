@@ -105,27 +105,32 @@ Nun annui noyirrikon
 ```
 ![](example_output.png)
 
-Names can be enclosed in double backslashes so that they appear correctly in translated text:
+Names can be enclosed in backslashes so that they appear correctly in translated text. A backslash is also used as an escape character. If the use of backslash can result in such characters, leave a space after the backslash. See the first and third examples below.
 ```
-$ ./telsistrans -t "I love Major \\Gilbert\\" -sl en
+$ ./telsistrans -t "I love Major \Gilbert\ " -sl en
 Nun posuk Gilbert ui gikapmarikon
-$ ./telsistrans -t "Posuk \\Gilbert\\ nunki." -sl telsis
+$ ./telsistrans -t "Posuk \Gilbert\ nunki." -sl telsis
 Thank you Major Gilbert.
-$ ./telsistrans -t "Thank you Major \\Gilbert\\" -sl en
+$ ./telsistrans -t "Thank you Major \Gilbert\ " -sl en
 Posuk Gilbert nunki
-$ ./telsistrans -t "Nun posuk \\Gilbert\\ ui gikapmarikon." -sl telsis
+$ ./telsistrans -t "Nun posuk \Gilbert\ ui gikapmarikon." -sl telsis
 I like Major Gilbert.
-$ ./telsistrans -t "Thank you \\Gilbert\\, \\Hodgins\\, and \\Violet\\." -sl en
+$ ./telsistrans -t "Thank you \Gilbert\ , \Hodgins\ , and \Violet\." -sl en
 Gilbert, Hodgins pukkap Violet nunki.
 ```
+
 Note: Punctuation is sometimes not handled properly, so it is best to avoid using punctuation marks in the source text. For example:
 ```
-$ ./telsistrans -t "\\Gilbert\\, \\Hodgins\\ pukkap \\Violet\\ nunki." -sl telsis
+$ ./telsistrans -t "\Gilbert\ , \Hodgins\ pukkap \Violet\ nunki." -sl telsis
 Gilbert
-$ ./telsistrans -t "\\Gilbert\\ \\Hodgins\\ pukkap \\Violet\\ nunki." -sl telsis
+$ ./telsistrans -t "\Gilbert\ \Hodgins\ pukkap \Violet\ nunki." -sl telsis
 Thanks to Gilbert Hodgkins and Violet.
 ```
-
+The issue seems to be with the handling of comma. A workaround is to use some other punctuation mark, like a semi-colon.
+```
+$ ./telsistrans -t "Nunki \Gilbert\ ; \Hodgins\ pukkap \Violet\ " -sl telsis
+Thanks Gilbert; Hodgkins and Violet
+```
 
 ## Use as library
 The translator has been implemented as a Python class, which allows the script to be used as a library. The basic method is to create an instance of the `telsis_translator` class, and call either the `lang2telsis` method to translate to the Telsis language, or `telsis2lang` to translate from the Telsis language. The target text is found in `results['tgt_text']` of the class.
