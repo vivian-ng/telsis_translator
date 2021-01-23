@@ -127,7 +127,6 @@ def run_app(translator):
     window = sg.Window('Telsis Translator', layout,
                 icon=iconfile,
                 font=(DEFAULT_FONT, UI_FONT_SIZE))
-    window.read()
 
     while True:  # Event Loop
         event, values = window.read()
