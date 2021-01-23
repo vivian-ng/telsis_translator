@@ -87,6 +87,7 @@ def on_press_display_button(window, values):
 
 def run_app(translator):
     sg.theme("Default")
+    sg.change_look_and_feel('DefaultNoMoreNagging')
 
     avail_languages_list = []
     for lang_code in avail_languages.keys():
@@ -119,7 +120,9 @@ def run_app(translator):
             [target_text_input],
             [telsis_text_input],
             [error_text_label]]
-    window = sg.Window('Telsis Translator', layout, font=(DEFAULT_FONT, UI_FONT_SIZE))
+    window = sg.Window('Telsis Translator', layout,
+                icon="TelsisTranslator.ico",
+                font=(DEFAULT_FONT, UI_FONT_SIZE))
 
     while True:  # Event Loop
         event, values = window.read()
