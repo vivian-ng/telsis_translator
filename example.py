@@ -1,3 +1,11 @@
+"""
+Telsis language translator
+
+Example on how to use telsistrans module
+
+Copyright (c) 2021 Vivian Ng
+"""
+
 from telsistrans import telsis_translator
 translator = telsis_translator()
 srctext = "I love you"

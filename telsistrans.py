@@ -1,4 +1,11 @@
 #!/usr/bin/env python3
+"""
+Telsis language translator
+
+telsistrans module
+
+Copyright (c) 2021 Vivian Ng
+"""
 import unidecode
 from google_trans_new import google_translator
 from telsis_alphabet import alphabet

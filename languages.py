@@ -1,5 +1,10 @@
-# Languages available for source and target languages
+"""
+Telsis language translator
 
+List of languages available for source and target languages
+
+Copyright (c) 2021 Vivian Ng
+"""
 # Languages available for the translation API.
 avail_trans_languages = {
     'en': 'english',

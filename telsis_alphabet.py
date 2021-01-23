@@ -1,3 +1,10 @@
+"""
+Telsis language translator
+
+Alphabet lookup table for substitution cipher
+
+Copyright (c) 2021 Vivian Ng
+"""
 alphabet = {
     'a': 'u',
     'b': 'b',

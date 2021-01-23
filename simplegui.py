@@ -1,4 +1,11 @@
 #!/usr/bin/env python3
+"""
+Telsis language translator
+
+GUI using PySimpleGUI
+
+Copyright (c) 2021 Vivian Ng
+"""
 import os
 import sys
 import io

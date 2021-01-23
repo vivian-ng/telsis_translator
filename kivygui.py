@@ -1,4 +1,11 @@
 #!/usr/bin/env python3
+"""
+Telsis language translator
+
+GUI using Kivy
+
+Copyright (c) 2021 Vivian Ng
+"""
 import os
 os.environ["KIVY_NO_ARGS"] = "1"
 import sys
