@@ -1,5 +1,5 @@
 # Telsis language translator
-This Python3 script translates to and from the Telsis language, the language used in the world setting of Violet Evergarden. The language is created by translating the source text into Tamil, converting the Tamil script into unaccented English alphabet characters, using a substitution cipher to swap the characters, and finally representing the results in the Telsis alphabet. The [References](#references) section contains more information about decoding the language and the original script from which this translator is built on. This script can be used from the [commandline](#basic-usage), in [interactive console mode](#interactive-console-mode), or as a [Python library](#use-as-library). A GUI is also available but it requires PySimpleGUI. A future GUI will use [Kivy](https://kivy.org/). Detailed explanation of how to script works can be found [here](explanation.md).
+This Python3 script translates to and from the Telsis language, the language used in the world setting of Violet Evergarden. The language is created by translating the source text into Tamil, converting the Tamil script into unaccented English alphabet characters, using a substitution cipher to swap the characters, and finally representing the results in the Telsis alphabet. The [References](#references) section contains more information about decoding the language and the original script from which this translator is built on. This script can be used from the [commandline](#basic-usage), in [interactive console mode](#interactive-console-mode), or as a [Python library](#use-as-library). A GUI is also available but it requires [Kivy](https://kivy.org/) or PySimpleGUI. Detailed explanation of how to script works can be found [here](explanation.md).
 
 Note: Not for commercial use as this script uses the [google_trans_new](https://github.com/lushan88a/google_trans_new) library which does not allow usage for commercial purposes.
 
@@ -15,22 +15,22 @@ Install requirements (less PySimpleGUI or Kivy) with:
 pip3 install -r requirements.txt
 ```
 
-To install PySimpleGUI, which is needed for the GUI:
+[Kivy](https://kivy.org/) is required to run the GUI. See the instructions [here](https://kivy.org/doc/stable/gettingstarted/installation.html) on how to install Kivy. The Kivy app will also require the `japanize-kivy` package, which can be installed by `pip3 install japanize-kivy`, in order for the correct rendering of CJK characters.
+
+To install PySimpleGUI, which is needed for the simple GUI:
 ```
 pip3 install pysimplegui
 ```
-The font file [TelsisTyped.otf](TelsisTyped.otf) is required for the GUI and needs to be installed in the system font path. This can be `~/.fonts` for Linux systems. For Windows, it will need to be installed.
-
-A future version will need [Kivy](https://kivy.org/) to run the GUI. See the instructions [here](https://kivy.org/doc/stable/gettingstarted/installation.html) on how to install Kivy. 
-
+For the GUI based on PySimpleGUI, the font file [TelsisTyped.otf](TelsisTyped.otf) needs to be installed in the system font path. This can be `~/.fonts` for Linux systems. For Windows, it will need to be installed.
 
 ## Basic usage
 ```
-usage: telsistrans [-h] [-g | -i | -t TEXT] [-sl SRCLANG] [-tl TGTLANG] [-d] [-f FONT]
+usage: telsistrans [-h] [-g | -gx | -i | -t TEXT] [-sl SRCLANG] [-tl TGTLANG] [-d] [-f FONT]
 
 optional arguments:
   -h, --help            show this help message and exit
-  -g, --gui             graphical mode
+  -g, --gui             graphical mode using Kivy
+  -gx, --simplegui      graphical mode using PySimpleGUI
   -i, --interactive     interactive console mode
   -t TEXT, --text TEXT  source text
   -sl SRCLANG, --srclang SRCLANG
@@ -48,9 +48,15 @@ If Telsis is specified as the target language, the translator will attempt to tr
 
 The "display" option (`-d` or `--display`) can be used to show the results in the Telsis alphabet if the target language is Telsis. A font file must be specified for this to work. See the section on [Fonts](#fonts) for more information.
 
-Names that are not to be translated can be enclosed in double backslashes.
+Names that are not to be translated can be enclosed in backslashes.
 
-The "gui" option will launch a GUI if PySimpleGUI (or in the future, [Kivy](https://kivy.org/)) is installed.
+The "gui" option (`-g` or `--gui`) will launch a GUI based on [Kivy](https://kivy.org/) if it is installed. If you want to use a GUI based on PySimpleGUI, use the "simplegui" option (`-gx` or `--simplegui`).
+
+**GUI based on Kivy**
+
+![](kivy_screenshot.png)
+
+**GUI based on PySimpleGUI**
 
 ![](pysimplegui_screenshot.png)
 
@@ -100,7 +106,7 @@ Thank you Major
 ```
 Displaying in Telsis alphabet:
 ```
-$ ./telsistrans -t "I love you" -sl en -d -f Automemoryfont.otf 
+$ ./telsistrans -t "I love you" -sl en -d -f TelsisTyped.otf 
 Nun annui noyirrikon
 ```
 ![](example_output.png)
@@ -164,17 +170,17 @@ $ ./telsis_display "Nunki posuk"
 $ ./telsis_display "Nun annui noyirrikon" -f TelsisTyped.otf
 ```
 
-For the desktop GUI, the font file needs to be in your system. In Linux systems, you can place the file in `~/.fonts` folder. In Windows, you will need to install the font. Currently, the desktop GUI uses [TelsisTyped.otf](TelsisTyped.otf) included in this repository. 
+For the simple GUI, the font file needs to be in your system. In Linux systems, you can place the file in `~/.fonts` folder. In Windows, you will need to install the font. Currently, the GUI uses [TelsisTyped.otf](TelsisTyped.otf) included in this repository. (The advantage of using the Kivy GUI is that it can directly load custom fonts without the need for them to be installed in your system.)
 
 ## Versions
-Current version: v0.2
-- v0.1: Initial version with basic operations from command line, interactive console mode, and use as library. Names can be handled by enclosing in double backslashes.
+Current version: v0.3
+- v0.1: Initial version with basic operations from command line, interactive console mode, and use as library. Names can be handled by enclosing in backslashes.
 - v0.2: Added simple GUI using PySimpleGUI.
+- v0.3: Added GUI based on Kivy.
 
 TODO:
 - More robust testing using available text in Telsis language
 - Find a way to handle punctuation correctly
-- Create a Kivy GUI with a nice looking theme
 - Find a Google Translate Python library that allows commercial use (maybe the [pygoogletranslation](https://github.com/Saravananslb/py-googletranslation) library or the [Googletrans](https://github.com/ssut/py-googletrans) library)
 - Ambitious goal: train a deep learning neural network to recognize Telsis language alphabets and convert them into English alphabets, then run translation on the result
 
@@ -186,6 +192,8 @@ TODO:
 
 ## License
 MIT License; see [LICENSE](LICENSE) file for more information.
+
+The [Noto Sans Serif CJK font](https://www.google.com/get/noto/help/cjk/) used in the Kivy app is distributed under the SIL Open Font License, Version 1.1 which can be viewed [here](fonts/LICENSE_OFL.txt).
 
 
 Copyright (c) 2021 Vivian Ng

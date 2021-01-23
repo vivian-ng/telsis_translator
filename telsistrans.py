@@ -166,7 +166,9 @@ def interactive_console(display_flag, font_file):
 def main():
     parser = argparse.ArgumentParser()
     group = parser.add_mutually_exclusive_group()
-    group.add_argument("-g", "--gui", help="graphical mode",
+    group.add_argument("-g", "--gui", help="graphical mode using Kivy",
+                    action="store_true")
+    group.add_argument("-gx", "--simplegui", help="graphical mode using PySimpleGUI",
                     action="store_true")
     group.add_argument("-i", "--interactive", help="interactive console mode",
                     action="store_true")
@@ -207,7 +209,11 @@ def main():
 
     # Handle arguments
     if args.gui:
-        from gui import run_gui
+        from kivygui import run_gui  # use GUI based on Kivy
+        translator = telsis_translator()
+        run_gui(translator)
+    elif args.simplegui:
+        from simplegui import run_gui  # use GUI based on PySimpleGUI
         translator = telsis_translator()
         run_gui(translator)
     elif args.interactive:  # Interactive mode
