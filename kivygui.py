@@ -40,7 +40,6 @@ from kivy.graphics import Color
 from kivy.graphics import Rectangle
 from kivy.resources import resource_add_path, resource_find
 
-
 USER_FONT_SIZE = 24
 UI_FONT_SIZE = 20
 def find_key(x, d):
@@ -126,7 +125,6 @@ class TelsisApp(App):
         target_text_canvas.add_widget(self.telsis_text_label)
         self.error_label = Label(text='')
 
-
         layout = BoxLayout(padding=10, orientation='vertical')
         layout.add_widget(source_row)  # Choose source language
         layout.add_widget(target_row)  # Choose target language
@@ -138,9 +136,6 @@ class TelsisApp(App):
         layout.add_widget(target_text_canvas)  # Translated text in Telsis font
         layout.add_widget(self.error_label)  # Error messages
 
-        #layout.add_widget(Label(text='Hello from Kivy',
-        #            size_hint=(.5, .5),
-        #            pos_hint={'center_x': .5, 'center_y': .5}))
         return layout
 
     def set_translator(self, translator):
@@ -212,6 +207,7 @@ def run_gui(translator):
     if translator == "":
         from telsistrans import telsis_translator
         translator = telsis_translator()
+
     app = TelsisApp()
     app.set_translator(translator)
     Window.size = (480, 720)
