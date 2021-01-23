@@ -1,12 +1,19 @@
 #!/usr/bin/env python3
+"""
+Telsis language translator
 
-# Displays a given text in the Telsis alphabet.
-# A Telsis alphabet font is required to use this script.
-# This can be the font file "Violet_evergardenV14-Regular.ttf"
-# from https://www.reddit.com/r/anime/comments/7t789w/violet_evergarden_how_to_be_an_optimal_dollfont/
-# with the link at https://goo.gl/PUiwDe
-# Alternative font from https://www.reddit.com/r/VioletEvergarden/comments/fzkvc3/i_made_the_font_update/
-# with the link at https://drive.google.com/file/d/1a2FY8_Yyyk3ULGhpq7sPQ2N5KurLKyIk/view?usp=sharing
+Script to display a given text in the Telsis alphabet.
+A Telsis alphabet font is required to use this script.
+The default is "TelsisTyped.otf".
+Alternative fonts include "Violet_evergardenV14-Regular.ttf"
+from https://www.reddit.com/r/anime/comments/7t789w/violet_evergarden_how_to_be_an_optimal_dollfont/
+with the link at https://goo.gl/PUiwDe
+and the font font from https://www.reddit.com/r/VioletEvergarden/comments/fzkvc3/i_made_the_font_update/
+with the link at https://drive.google.com/file/d/1a2FY8_Yyyk3ULGhpq7sPQ2N5KurLKyIk/view?usp=sharing
+
+Copyright (c) 2021 Vivian Ng
+"""
+
 
 import argparse, sys
 
@@ -16,16 +23,14 @@ def telsis2image(telsis_text, font_file):
     # Displays in Telsis characters.
     # create an image
     if font_file == "":
-        font_file = "Violet_evergardenV14-Regular.ttf"
+        font_file = "TelsisTyped.otf"
     out = Image.new("RGB", (720, 100), (255, 255, 255))
     # get a font
     fnt = ImageFont.truetype(font_file, 40)
-    #fnt = ImageFont.truetype("Violet_evergardenV14-Regular.ttf", 40)
-    #fnt = ImageFont.truetype("Automemoryfont.otf", 40)
     # get a drawing context
     d = ImageDraw.Draw(out)
     d.rectangle([0,0,720,100], fill=(255,255,255))
-    d.text((10,10), telsis_text, fill=(0,0,0), font=fnt, stroke_width=1)
+    d.text((10,10), telsis_text, fill=(0,0,0), font=fnt, stroke_width=0)
     out.show()
 
 
