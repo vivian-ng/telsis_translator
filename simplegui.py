@@ -120,9 +120,14 @@ def run_app(translator):
             [target_text_input],
             [telsis_text_input],
             [error_text_label]]
+    if sys.platform.startswith('win'):
+        iconfile = 'TelsisTranslatorIcon.ico'
+    else:
+        iconfile = 'TelsisTranslatorIcon.png'
     window = sg.Window('Telsis Translator', layout,
-                icon="TelsisTranslator.ico",
+                icon=iconfile,
                 font=(DEFAULT_FONT, UI_FONT_SIZE))
+    window.read()
 
     while True:  # Event Loop
         event, values = window.read()
