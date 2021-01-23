@@ -120,7 +120,7 @@ class TelsisApp(App):
         target_text_canvas = ScrollView(size_hint=(1, None))
         self.telsis_text_label = Label(text='', size_hint=(1, None),
                         font_size=USER_FONT_SIZE,
-                        font_name='TelsisTyped1.otf',
+                        font_name='TelsisTyped.otf',
                         halign="left", valign="top")
         target_text_canvas.add_widget(self.telsis_text_label)
         self.error_label = Label(text='')
