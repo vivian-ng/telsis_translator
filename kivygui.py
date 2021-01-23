@@ -56,7 +56,11 @@ class TelsisApp(App):
     def build(self):
         #self.root = get_main_window()
         #self.root.clearcolor = (1, 1, 1, 1)
-        self.icon = 'TelsisTranslatorIcon.ico'
+        if sys.platform.startswith('win'):
+            iconfile = 'TelsisTranslatorIcon.ico'
+        else:
+            iconfile = 'TelsisTranslatorIcon.png'
+        self.icon = iconfile
         avail_languages_list = []
         for lang_code in avail_languages.keys():
             avail_languages_list.append(avail_languages[lang_code])
