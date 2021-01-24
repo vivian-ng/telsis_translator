@@ -29,16 +29,11 @@ def telsis2image(telsis_text, font_file):
     out = Image.new("RGB", (720, 100), (255, 255, 255))
     # get a font
     fnt = ImageFont.truetype(font_file, 40)
-    #fnt = ImageFont.truetype("Violet_evergardenV14-Regular.ttf", 40)
-    #fnt = ImageFont.truetype("Automemoryfont.otf", 40)
     # get a drawing context
     d = ImageDraw.Draw(out)
     d.rectangle([0,0,720,100], fill=(255,255,255))
     d.text((10,10), telsis_text, fill=(0,0,0), font=fnt, stroke_width=0)
     out.show()
-
-#translator = google_translator()
-#tamil_script_url = 'https://inputtools.google.com/request?text={text}&itc=ta-t-i0-und'
 
 class telsis_translator:
     def __init__(self):
