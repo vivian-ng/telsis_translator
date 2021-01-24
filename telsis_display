@@ -11,6 +11,15 @@ with the link at https://goo.gl/PUiwDe
 and the font font from https://www.reddit.com/r/VioletEvergarden/comments/fzkvc3/i_made_the_font_update/
 with the link at https://drive.google.com/file/d/1a2FY8_Yyyk3ULGhpq7sPQ2N5KurLKyIk/view?usp=sharing
 
+usage: telsis_display [-h] [-f FONT] text
+
+positional arguments:
+  text                  text to display
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -f FONT, --font FONT  font file
+  
 Copyright (c) 2021 Vivian Ng
 """
 

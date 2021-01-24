@@ -4,6 +4,21 @@ Telsis language translator
 
 main script
 
+usage: telsistrans [-h] [-g | -gx | -i | -t TEXT] [-sl SRCLANG] [-tl TGTLANG] [-d] [-f FONT]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -g, --gui             graphical mode using Kivy
+  -gx, --simplegui      graphical mode using PySimpleGUI
+  -i, --interactive     interactive console mode
+  -t TEXT, --text TEXT  source text
+  -sl SRCLANG, --srclang SRCLANG
+                        source language
+  -tl TGTLANG, --tgtlang TGTLANG
+                        target language
+  -d, --display         display results in Telsis font
+  -f FONT, --font FONT  font file
+
 Copyright (c) 2021 Vivian Ng
 """
 from telsistrans import *
