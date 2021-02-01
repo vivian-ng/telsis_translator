@@ -86,6 +86,8 @@ def on_press_display_button(window, values):
         window['error_text'].update("")
 
 def run_app(translator):
+    from install_fonts import install_fonts
+    install_fonts()
     sg.theme("Default")
     sg.change_look_and_feel('DefaultNoMoreNagging')
 
@@ -130,7 +132,7 @@ def run_app(translator):
 
     while True:  # Event Loop
         event, values = window.read()
-        print(event, values)
+        #print(event, values)
         if event == sg.WIN_CLOSED or event == 'Exit':
             break
         if event == '_TRANSLATE_BUTTON_':
