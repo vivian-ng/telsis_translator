@@ -170,7 +170,7 @@ $ ./telsis_display "Nunki posuk"
 $ ./telsis_display "Nun annui noyirrikon" -f TelsisTyped.otf
 ```
 
-For the simple GUI, the font file needs to be in your system. In Linux systems, you can place the file in `~/.fonts` folder. In Windows, you will need to install the font. Currently, the GUI uses [TelsisTyped.otf](TelsisTyped.otf) included in this repository. (The advantage of using the Kivy GUI is that it can directly load custom fonts without the need for them to be installed in your system.)
+For the simple GUI, the font file [TelsisTyped.otf](TelsisTyped.otf) needs to be in your system. In Linux systems, you can place the file in `~/.fonts` folder. If [TelsisTyped.otf](TelsisTyped.otf) is not present in the `~/.fonts` folder, the simple GUI will attempt to copy this file into the folder when it runs. In Windows, you will need to install the font. A function has been added to attempt to load this font for the simple GUI but it is still untested. (The advantage of using the Kivy GUI is that it can directly load custom fonts without the need for them to be installed in your system.)
 
 ## Versions
 Current version: v0.3
