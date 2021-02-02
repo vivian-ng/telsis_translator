@@ -86,8 +86,14 @@ def on_press_display_button(window, values):
         window['error_text'].update("")
 
 def run_app(translator):
-    from install_fonts import install_fonts
-    install_fonts()
+    
+    # Uncomment the following two lines to make the GUI:
+    # - On Linux systems, check if TelsisTyped.otf has been installed
+    #   and attempt to install in .fonts directory if not
+    # - On Windows, register TelsisTyped.otf in the font system (untested)
+    #from install_fonts import install_fonts
+    #install_fonts()
+    
     sg.theme("Default")
     sg.change_look_and_feel('DefaultNoMoreNagging')
 
