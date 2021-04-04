@@ -6,13 +6,13 @@ The Telsis language (called Nunkish by fans because the first word that was deco
 2. Translating the English text into an undisclosed language
 3. Using a substitution cipher to swap certain letters; names are not processed by the cipher
 
-This process was shared by Suzuki Takaaki at a [movie screening event](http://violet-evergarden.jp/special/greeting03/) that was held on December 3, 2020 at Shinjuku Piccadilly Cinema. The undisclosed language has been determined by fans as Tamil, as explained in this [Reddit post](https://www.reddit.com/r/anime/comments/88bbob/violet_evergarden_alphabet_and_language_part_2/). This means that we can create our own text in the Telsis language by:
+This process was shared by Suzuki Takaaki at a [movie screening event](http://violet-evergarden.jp/special/greeting03/) that was held on December 3, 2020 at Shinjuku Piccadilly Cinema (read about the event [here](https://teck78.blogspot.com/2020/12/production-staff-event-at-screening-of.html)). The undisclosed language has been determined by fans as Tamil, as explained in this [Reddit post](https://www.reddit.com/r/anime/comments/88bbob/violet_evergarden_alphabet_and_language_part_2/). This means that we can create our own text in the Telsis language by:
 
 1. Translating the source text into Tamil
 2. Converting the Tamil script by denoting its pronunciation using unaccented characters
 3. Using a substitution cipher to swap certain letters; names are not processed by the cipher
 
-The above process can also be reversed to translate text in the Telsis language into the required real-world language.
+The above process can also be reversed to translate text in the Telsis language into the required real-world language. However, do note that because of the way language translations work, we do not have a one-to-one mapping between Telsis and a real-world language. Which means that when we translate a sentence from, say, English into Telsis, and then translate that same Telsis sentence back into English, we may not end up with the exact English sentence that we started with.
 
 ## Determining source and target languages when used from the commandline
 The script determines whether it is translating from Telsis or to Telsis based on the commandline arguments.
