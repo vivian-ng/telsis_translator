@@ -133,7 +133,7 @@ class telsis_translator:
     def lang2telsis(self, source_text, src_lang):
         source_text = self.preprocess_source_text(source_text)
         self.lang2tamil(source_text, src_lang)
-        tgt_text = self.tamil2telsis(self.results['tamil_text'])
+        tgt_text = self.tamil2telsis(self.results['tamil_text']).replace('xxx', 'XXX')
         self.results['tgt_text'] = self.replace_names(tgt_text)
 
     def telsis2lang(self, source_text, tgt_lang):

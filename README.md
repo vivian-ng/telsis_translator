@@ -5,7 +5,6 @@ Note: Not for commercial use as this script uses the [google_trans_new](https://
 
 ## Requirements
 ```
-google_trans_new
 unidecode
 requests
 Pillow
@@ -173,10 +172,11 @@ $ ./telsis_display "Nun annui noyirrikon" -f TelsisTyped.otf
 For the simple GUI, the font file [TelsisTyped.otf](TelsisTyped.otf) needs to be in your system. In Linux systems, you can place the file in `~/.fonts` folder. If [TelsisTyped.otf](TelsisTyped.otf) is not present in the `~/.fonts` folder, the simple GUI will attempt to copy this file into the folder when it runs. In Windows, you will need to install the font. A function has been added to attempt to load this font for the simple GUI but it is still untested. (The advantage of using the Kivy GUI is that it can directly load custom fonts without the need for them to be installed in your system.)
 
 ## Versions
-Current version: v0.3
+Current version: v0.3.1
 - v0.1: Initial version with basic operations from command line, interactive console mode, and use as library. Names can be handled by enclosing in backslashes.
 - v0.2: Added simple GUI using PySimpleGUI.
 - v0.3: Added GUI based on Kivy.
+- v0.3.1: Fixed bug with handling of names; used a local copy of [google_trans_new](https://github.com/lushan88a/google_trans_new) as the PyPi version is buggy.
 
 TODO:
 - More robust testing using available text in Telsis language
